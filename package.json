@@ -5,7 +5,7 @@
   "homepage": "https://github.com/Ruslan-Karnaukh/goit-js-hw-08",
   "scripts": {
     "start": "parcel parcel-project-template/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build parcel-project-template/*.html --public-url /Ruslan-Karnaukh/"
   },
   "repository": {
     "type": "git",
