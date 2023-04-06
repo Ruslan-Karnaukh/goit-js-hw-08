@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/Ruslan-Karnaukh/goit-js-hw-08",
+  "homepage": "https://github.com/packege.json/goit-js-hw-08",
   "scripts": {
     "start": "parcel parcel-project-template/*.html",
-    "build": "parcel build parcel-project-template/*.html --public-url /Ruslan-Karnaukh/"
+    "build": "parcel build parcel-project-template/*.html --public-url /packege.json/"
   },
   "repository": {
     "type": "git",

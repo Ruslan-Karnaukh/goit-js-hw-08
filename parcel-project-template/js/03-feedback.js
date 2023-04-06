@@ -13,12 +13,12 @@ refs.email.addEventListener("input", throttle(textValue, 500));
 refs.textarea.addEventListener("input", throttle(textValue, 500));
 refs.form.addEventListener("submit", submitForm);
 
-
 let obj = {
     email : "",
     textarea : "",
 };
 
+getStorageText()
 function textValue({target}){
     if(target.type === 'email'){
         refs.email = target.value;
