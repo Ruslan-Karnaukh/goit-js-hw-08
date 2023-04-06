@@ -50,5 +50,5 @@ function submitForm (event){
     event.preventDefault();
     event.currentTarget.reset();
     localStorage.removeItem(FEEDBACKFORM)
-    
+    console.log(obj)
 }
