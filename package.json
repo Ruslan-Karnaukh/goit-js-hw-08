@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/packege.json/goit-js-hw-08",
+  "homepage": "https://github.com/goit-js-hw-08/package.json",
   "scripts": {
     "start": "parcel parcel-project-template/*.html",
-    "build": "parcel build parcel-project-template/*.html --public-url /packege.json/"
+    "build": "parcel build parcel-project-template/*.html --public-url /package.json/"
   },
   "repository": {
     "type": "git",
