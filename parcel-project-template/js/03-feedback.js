@@ -29,7 +29,6 @@ function textValue({target}){
         obj.textarea = refs.textarea; 
        localStorage.setItem(FEEDBACKFORM, JSON.stringify(obj))
     } 
-    getStorageText()
 };
 
 function getStorageText (){
