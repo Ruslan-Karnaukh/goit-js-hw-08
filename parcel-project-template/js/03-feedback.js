@@ -13,7 +13,7 @@ refs.email.addEventListener("input", throttle(textValue, 500));
 refs.textarea.addEventListener("input", throttle(textValue, 500));
 refs.form.addEventListener("submit", submitForm);
 
-let obj = {
+const obj = {
     email : "",
     textarea : "",
 };
@@ -29,26 +29,48 @@ function textValue({target}){
         obj.textarea = refs.textarea; 
        localStorage.setItem(FEEDBACKFORM, JSON.stringify(obj))
     } 
+    
 };
 
 function getStorageText (){
-    const valueStorage = localStorage.getItem(FEEDBACKFORM);
-    const parsObj = JSON.parse(valueStorage)
-    if(FEEDBACKFORM){
-        obj = {
-            email : parsObj.email,
-            textarea : parsObj.textarea,
-        }
-        }
+    try {
+        const valueStorage = localStorage.getItem(FEEDBACKFORM);
+        const parsObj = JSON.parse(valueStorage)
+        if(parsObj){
+            
+            obj.email = parsObj.email;
+            obj.textarea = parsObj.textarea;
+            refs.email.value = obj.email;
+            refs.textarea.value = obj.textarea
+ } else if(!FEEDBACKFORM){
+    obj.email = "";
+obj.textarea = "";
     refs.email.value = obj.email;
-    refs.textarea.value = obj.textarea
-      
+    refs.textarea.value = obj.textarea;
+ }}
+ catch (error) {
+        // console.error("error")
+    }
+
 }
    
 
 function submitForm (event){
     event.preventDefault();
-    event.currentTarget.reset();
+ 
+    const valueStorage = localStorage.getItem(FEEDBACKFORM);
+    const parsObj = JSON.parse(valueStorage);
     localStorage.removeItem(FEEDBACKFORM)
-    console.log(obj)
+    event.currentTarget.reset();
+    if(!parsObj){
+      console.log("form not completed")
+      obj.email = "";
+      obj.textarea = "";
+      
+    }
+    
+    
+    
+console.log(obj)
+    
 }
