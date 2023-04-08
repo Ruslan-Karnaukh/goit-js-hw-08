@@ -49,7 +49,7 @@ obj.textarea = "";
     refs.textarea.value = obj.textarea;
  }}
  catch (error) {
-        // console.error("error")
+        console.error("error")
     }
 
 }
@@ -66,11 +66,8 @@ function submitForm (event){
       console.log("form not completed")
       obj.email = "";
       obj.textarea = "";
-      
-    }
-    
-    
-    
+
+    }  
 console.log(obj)
-    
+  
 }
