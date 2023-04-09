@@ -36,19 +36,12 @@ function getStorageText (){
     try {
         const valueStorage = localStorage.getItem(FEEDBACKFORM);
         const parsObj = JSON.parse(valueStorage)
-        if(parsObj){
-            
+        if(parsObj){     
             obj.email = parsObj.email;
             obj.textarea = parsObj.textarea;
             refs.email.value = obj.email;
             refs.textarea.value = obj.textarea
- } else if(!FEEDBACKFORM){
-    obj.email = "";
-obj.textarea = "";
-    refs.email.value = obj.email;
-    refs.textarea.value = obj.textarea;
- }}
- catch (error) {
+}} catch (error) {
         console.error("error")
     }
 
@@ -57,17 +50,18 @@ obj.textarea = "";
 
 function submitForm (event){
     event.preventDefault();
- 
+    const {email, message} = event.currentTarget;
+    if(email.value === "" || message.value === ""){
+        return alert("Please fill out the form")
+    }
+    const obj = {
+        email : email.value,
+        textarea : message.value,
+    }
+    console.log(obj)
+
     const valueStorage = localStorage.getItem(FEEDBACKFORM);
     const parsObj = JSON.parse(valueStorage);
     localStorage.removeItem(FEEDBACKFORM)
     event.currentTarget.reset();
-    if(!parsObj){
-      console.log("form not completed")
-      obj.email = "";
-      obj.textarea = "";
-
-    }  
-console.log(obj)
-  
 }

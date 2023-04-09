@@ -15,6 +15,6 @@ function playerSTime (event){
 };
 
 
-player.setCurrentTime(localStorage.getItem(VIDEOPLAYER));
+player.setCurrentTime(localStorage.getItem(VIDEOPLAYER) || 0);
 
 
