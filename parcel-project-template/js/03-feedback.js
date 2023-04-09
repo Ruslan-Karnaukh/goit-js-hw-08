@@ -53,15 +53,11 @@ function submitForm (event){
     const {email, message} = event.currentTarget;
     if(email.value === "" || message.value === ""){
         return alert("Please fill out the form")
-    }
-    const obj = {
-        email : email.value,
-        textarea : message.value,
-    }
+    } 
+        obj.email = email.value;
+        obj.textarea = message.value;
+    
     console.log(obj)
-
-    const valueStorage = localStorage.getItem(FEEDBACKFORM);
-    const parsObj = JSON.parse(valueStorage);
     localStorage.removeItem(FEEDBACKFORM)
     event.currentTarget.reset();
 }
